@@ -339,17 +339,269 @@ npm run build
 - Reports Management
 
 ---
+# RAQIB Backend API
 
-## Project Objective
+<div align="center">
 
-RAQIB aims to simplify the process of reporting urban issues by combining Artificial Intelligence, real-time communication, and interactive mapping into a single platform. The system enhances collaboration between citizens and local authorities, helping improve response time, prioritize high-risk incidents, and support the development of safer and smarter cities.
+
+Backend built with **ASP.NET Core Web API**
+
+</div>
 
 ---
 
-## License
+## ✨ Features
 
-This project was developed for educational purposes as part of a Graduation Project.
+### 🔐 Authentication & Authorization
 
+- Email Sign Up
+- Secure Login
+- JWT Authentication
+- Google OAuth Authentication
+- OTP Email Verification
+- Forgot Password
+- Password Reset
+- Role-Based Authorization (Citizen / Admin)
+
+---
+
+### 👤 Citizen Features
+
+- Create Reports
+- Upload Images
+- GPS Location Support
+- Track Report Status
+- View Report History
+- Interactive Map
+- AI Chat History
+- Real-Time Notifications
+- Email Notifications
+
+---
+
+### 🏛️ Admin Features
+
+- Manage Reports
+- Update Report Status
+- Approve / Reject Reports
+- Severity-Based Prioritization
+- User Management
+- Interactive Dashboard
+- Charts & Statistics
+- Governorate & Date Filtering
+- PDF Analytics Reports
+
+---
+
+### 🤖 AI Integration
+
+The backend communicates with a dedicated FastAPI AI service responsible for:
+
+- Image Classification
+- Confidence Score Prediction
+- Severity Assessment
+- Arabic AI Assistant Integration
+
+The backend stores AI results and connects them with citizen reports.
+
+---
+
+### 🔔 Notification System
+
+The system provides real-time communication using:
+
+- SignalR
+- Email Notifications
+- Live Report Status Updates
+
+Whenever a report status changes, the citizen instantly receives:
+
+- In-App Notification
+- Email Notification
+
+---
+
+### 📊 Analytics
+
+Administrators can access:
+
+- Dashboard Statistics
+- Reports by Governorate
+- Reports by Category
+- Severity Distribution
+- Date Filtering
+- PDF Report Generation
+
+---
+
+## 🧠 AI Categories
+
+The current version supports six categories:
+
+- Damaged Road
+- Normal Road
+- Damaged Home
+- Normal Building
+- Big Trash
+- Small Trash
+
+Future versions can easily support additional categories.
+
+---
+
+## 🏗️ Architecture
+
+The backend follows **Clean Architecture**.
+
+```
+Presentation Layer
+        │
+Controllers
+        │
+Application Layer
+        │
+Business Logic
+        │
+Infrastructure Layer
+        │
+Repositories
+        │
+Entity Framework Core
+        │
+SQL Server
+```
+
+---
+
+## 🛠️ Technology Stack
+
+### Backend
+
+- ASP.NET Core Web API
+- C#
+- Entity Framework Core
+- SQL Server
+- AutoMapper
+- FluentValidation
+
+### Authentication
+
+- JWT
+- Google OAuth
+- OTP Email Verification
+
+### AI Integration
+
+- FastAPI
+- REST API
+
+### Communication
+
+- SignalR
+- MailKit
+
+### Documentation
+
+- Swagger / OpenAPI
+
+### Reports
+
+- QuestPDF
+
+---
+
+## 📂 Project Structure
+
+```
+RAQIB_API
+│
+├── RAQIB.API
+├── RAQIB.Application
+├── RAQIB.Core
+├── RAQIB.Infrastructure
+│
+├── Controllers
+├── Services
+├── Repositories
+├── DTOs
+├── Entities
+├── Interfaces
+├── SignalR
+├── Middleware
+└── Helpers
+```
+
+---
+
+## 🚀 Running the Project
+
+### Clone
+
+```bash
+git clone https://github.com/RAQIB26/your-backend-repo.git
+```
+
+### Restore Packages
+
+```bash
+dotnet restore
+```
+
+### Update Database
+
+```bash
+dotnet ef database update
+```
+
+### Run
+
+```bash
+dotnet run
+```
+
+Swagger
+
+```
+https://localhost:{PORT}/swagger
+```
+
+---
+
+## 🔄 System Workflow
+
+1. User registers or logs in.
+2. User uploads an image and GPS location.
+3. Backend stores the report.
+4. Backend sends the image to the FastAPI AI Service.
+5. AI returns:
+   - Classification
+   - Confidence Score
+   - Severity Level
+6. Backend saves prediction results.
+7. Admin reviews the report.
+8. Status updates trigger:
+   - SignalR Notifications
+   - Email Notifications
+9. User tracks progress from the dashboard.
+
+---
+
+## 📈 Highlights
+
+- Clean Architecture
+- Repository Pattern
+- Dependency Injection
+- JWT Authentication
+- Google OAuth
+- OTP Verification
+- SignalR Real-Time Communication
+- AI Integration
+- PDF Report Generation
+- Interactive Dashboard
+- RESTful APIs
+- Scalable Design
+
+---
 ## Developed By
 
 - Zyad Atef
@@ -359,8 +611,22 @@ This project was developed for educational purposes as part of a Graduation Proj
 - Ahmed Mamdouh
 - Abdallah Kamel
 
+## 👨‍💻 Author
+
+**Zyad Atef**
+
+Backend Developer & Team Leader
+
+Faculty of Computers & Artificial Intelligence, Cairo University
+
 ---
 
-## License
+## 📄 License
 
-This project was developed for educational purposes as part of a Graduation Project.
+This project was developed as part of the **RAQIB Graduation Project**.
+
+## Project Objective
+
+RAQIB aims to simplify the process of reporting urban issues by combining Artificial Intelligence, real-time communication, and interactive mapping into a single platform. The system enhances collaboration between citizens and local authorities, helping improve response time, prioritize high-risk incidents, and support the development of safer and smarter cities.
+
+---
