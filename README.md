@@ -55,7 +55,7 @@ The AI model classifies images into the following categories:
 1. Receive an image from the backend.
 2. Preprocess the image.
 3. Resize and normalize input.
-4. Run inference using the trained MobileNetV2 model.
+4. Run inference using the trained EfficientNetB2 model.
 5. Predict the issue category.
 6. Calculate confidence score.
 7. Estimate damage severity.
@@ -65,18 +65,18 @@ The AI model classifies images into the following categories:
 
 ## Model Architecture
 
-The model is based on Transfer Learning using MobileNetV2.
+The final classification model is based on Transfer Learning using EfficientNetB2 with ImageNet pretrained weights.
 
 Architecture:
 
-- MobileNetV2 Backbone
+- EfficientNetB2 Backbone
 - Global Average Pooling
 - Batch Normalization
-- Dense Layer
 - Dropout
-- Output Layer (Softmax)
+- Dense Layer (512 neurons)
+- Output Layer (Softmax - 6 classes)
 
-The model was trained to recognize six different urban issue classes while maintaining fast inference suitable for deployment.
+The model was trained using a two-phase transfer learning strategy, followed by fine-tuning selected layers to improve classification performance.
 
 ---
 
@@ -87,7 +87,7 @@ The model was trained to recognize six different urban issue classes while maint
 - Python 3.12
 - TensorFlow
 - Keras
-- MobileNetV2
+- EfficientNetB2
 - NumPy
 - Pillow
 - OpenCV
@@ -211,11 +211,11 @@ Citizen → Frontend → ASP.NET Core API → FastAPI AI Service → Prediction 
 
 ## Performance
 
-- Real-time inference
-- Lightweight deployment
-- Optimized MobileNetV2 architecture
-- Fast API response
-- High prediction accuracy
+- Final model: EfficientNetB2
+- Classification accuracy: 94.15%
+- Evaluated using Precision, Recall, F1-Score, and Classification Report
+- Transfer learning and fine-tuning for improved generalization
+- Real-time inference through FastAPI
 
 ---
 
