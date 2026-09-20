@@ -8,6 +8,17 @@ The service exposes RESTful APIs through FastAPI, allowing seamless integration 
 
 ---
 
+
+## My Contribution
+
+This project was developed as a team project during the DEPI program.
+
+My main contributions included:
+- Collecting and organizing disaster-related infrastructure images for the project dataset.
+- Reviewing and preparing image data for model training.
+- Assisting with deep learning model experiments and performance improvement.
+- Contributing to the evaluation and selection of the final image classification model.
+
 ## Features
 
 - AI-powered urban issue classification
